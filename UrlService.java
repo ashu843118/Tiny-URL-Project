@@ -46,9 +46,7 @@ public class UrlService {
 
 			for (int i = 0; i < 6; i++) {
 				hash += UrlService.myChars[random.nextInt(62)];
-				// hash += random.nextInt(6);
-				// hash+="a";
-				System.out.println(hash);
+
 			}
 		} while (keyMap.containsKey(hash));
 		for (int i = 0; i < myChars.length; i++)
@@ -60,14 +58,10 @@ public class UrlService {
 
 	public String getLongUrl(String URL) {
 
-		if (URL.length() <= domain.length() + 1)
-			return "Invalid URL";
 		URL = URL.substring(domain.length() + 1);
-		if (keyMap.containsKey(URL)) {
 
-			return keyMap.get(URL);
-		} else
-			return "No url found in records";
+		return keyMap.get(URL);
+
 	}
 
 }
